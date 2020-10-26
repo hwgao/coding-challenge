@@ -41,6 +41,7 @@ def merge_k_linked_lists(linked_lists: List[Link]):
     """
     pq = PriorityQueue()
     for index, link in enumerate(linked_lists):
+        # Must put index before link.next, pq sorts based on link.val first, then index. And because index is unique, so the sorting stops.
         pq.put((link.val, index, link.next))
     start = Link(0)
     end = start
